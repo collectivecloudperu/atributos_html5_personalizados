@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+ 
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Que son los atributos data-toggle, data-set, etc. en HTML5</title>
+
+    <!-- Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <script src="js/bootstrap.min.js"></script>
+
+</head>
+	<body>
+
+		<div class="container">
+
+		    <div class="row" align="center">
+
+		        <div class="col-md-12">
+
+		        	<h1>Que son los atributos data-toggle, data-set, etc. en HTML5</h1>
+
+		        	<h2>Manipulando nuestro atributo personalizado con Javascript:</h2>
+
+					<br>
+
+					<h5>
+						<strong>La Paella es Mexicana: </strong><br>
+						data-gastronomia="Mexicana" (Atributo actual, por defecto)
+					</h5>
+
+					<h4>"Has click sobre el botón para ver el atributo modificado con Javascript:" </h4>
+
+		        	<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal" id="gastronomia" data-gastronomia="Mexicana">
+		        		Ver Nuevo atributo
+		        	</button>
+		        	
+				</div>
+
+			</div>
+
+
+			<br><br><br>
+
+
+
+
+			<div class="row" align="center">
+
+		        <div class="col-md-12">
+
+		        	<h2>Manipulando nuestro atributo personalizado con CSS:</h2>
+
+		        	<ul style="list-style-type: none;">
+			        	<li data-postre="Torta de Chocolate">Torta de Chocolate </li>
+						<li data-postre="Arroz con Leche">Arroz con Leche </li>
+						<li data-postre="Torta de Fresa">Torta de Fresa </li>
+					</ul>
+		        	
+				</div>
+
+			</div>
+
+			<br><br><br>
+
+			<footer align="center">				    	
+				Desarrollado por <a href="http://www.collectivecloudperu.com" target="_blank">Collective Cloud Perú</a>
+			</footer>
+
+		</div>
+
+
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" role="dialog">
+		    <div class="modal-dialog">
+		    
+		    <!-- Modal content-->
+		    <div class="modal-content">
+		        <div class="modal-header">
+		            <button type="button" class="close" data-dismiss="modal" title="Cerrar">&times;</button>
+		          	<h4 class="modal-title">Mensaje</h4>
+		        </div>
+		        <div class="modal-body">
+		          	<p id="txt"> </p>
+		          	Es decir el atributo lo hemos cambiado de Mexicana a Española con Javascript:
+		          	<br>
+		          	data-gastronomia="Española"
+		        </div>
+		        <div class="modal-footer">
+		          	<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+		        </div>
+		    </div>
+		      
+		    </div>
+		</div>
+
+		<style type="text/css">
+			li[data-postre='Arroz con Leche'] {
+				color: #FFC425;
+			}
+		</style>
+
+
+		<script type="text/javascript">
+			"use strict";
+
+			var ca = document.querySelector('#gastronomia');
+			var fca = ca.dataset.gastronomia = "Española";
+			var msge = "<strong>Ahora la Paella es: </strong>" + fca + ".";
+			document.getElementById('txt').innerHTML = msge;	
+		</script>
+
+	</body>
+</html>
